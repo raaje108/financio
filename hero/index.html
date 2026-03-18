@@ -1,0 +1,392 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financio</title>
+        <link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"></head>
+
+<body>
+    <header>
+        
+    </header>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2 class="sidebar-brand">USERNAME</h2>
+        <div class="sidebar-menu">
+            <a href="#" class="sidebar-item active">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="14" width="7" height="7"></rect>
+                    <rect x="3" y="14" width="7" height="7"></rect>
+                </svg>
+                All Notes
+            </a>
+            <a href="#" class="sidebar-item">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                    </path>
+                </svg>
+                Favorites
+            </a>
+            <a href="#" class="sidebar-item">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="1" x2="12" y2="23"></line>
+                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                </svg>
+                Transactions
+            </a>
+        </div>
+    </aside>
+
+    <div class="content-wrapper">
+        <!-- Top Navbar -->
+        <nav class="navbar glass">
+            <div class="logo"><h1 style="font-family: krona one;color: #2c3e50;">FINANCIO</h1></div>
+            <div class="nav-menu">
+                <a href="#" class="nav-item active">Home</a>
+                <a href="#shops" class="nav-item">Shops</a>
+                <a href="#add-shop" class="nav-item">Add Shop</a>
+                <a href="#login" class="nav-item">Login</a>
+                <a href="#contact" class="nav-item">Contact</a>
+            </div>
+        </nav>
+
+        <!-- Main Dashboard -->
+        <main class="main-content" id="shops">
+            <div class="header">
+                <h1>Your Shops & Logistics</h1>
+                <a href="#add-shop" class="btn btn-primary">+ New Shop</a>
+            </div>
+
+            <div class="shops-grid">
+                <!-- Shop Card 1 -->
+                <a href="#ledger" class="shop-card glass">
+                    <div class="shop-title">
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" fill="none"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                        </svg>
+                        Sai Kirana Store
+                    </div>
+                    <div class="shop-address">124 Main Street, Koti Market, Hyderabad, 500001</div>
+
+                    <div style="margin-top: auto;">
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 65%;"></div>
+                        </div>
+                        <div class="progress-text">
+                            <span class="stat-green">Paid 65%</span>
+                            <span class="stat-red">Remaining 35%</span>
+                        </div>
+
+                        <div class="shop-stats">
+                            <div class="stat-item">
+                                <span class="stat-label">Total Amount</span>
+                                <span class="stat-value">&#8377;24,500</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Amount Paid</span>
+                                <span class="stat-value stat-green">&#8377;15,925</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Remaining</span>
+                                <span class="stat-value stat-red">&#8377;8,575</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Shop Card 2 -->
+                <a href="#ledger" class="shop-card glass">
+                    <div class="shop-title">
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" fill="none"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                        </svg>
+                        Rahul Electronics
+                    </div>
+                    <div class="shop-address">Shop 4A, Electronics Plaza, Ameerpet, 500016</div>
+
+                    <div style="margin-top: auto;">
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 90%;"></div>
+                        </div>
+                        <div class="progress-text">
+                            <span class="stat-green">Paid 90%</span>
+                            <span class="stat-red">Remaining 10%</span>
+                        </div>
+
+                        <div class="shop-stats">
+                            <div class="stat-item">
+                                <span class="stat-label">Total Amount</span>
+                                <span class="stat-value">&#8377;1,20,000</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Amount Paid</span>
+                                <span class="stat-value stat-green">&#8377;1,08,000</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Remaining</span>
+                                <span class="stat-value stat-red">&#8377;12,000</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Shop Card 3 -->
+                <a href="#ledger" class="shop-card glass">
+                    <div class="shop-title">
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" fill="none"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                        </svg>
+                        Verma Hardware
+                    </div>
+                    <div class="shop-address">Plot 12, Industrial Area, Medchal, 501401</div>
+
+                    <div style="margin-top: auto;">
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 25%;"></div>
+                        </div>
+                        <div class="progress-text">
+                            <span class="stat-green">Paid 25%</span>
+                            <span class="stat-red">Remaining 75%</span>
+                        </div>
+
+                        <div class="shop-stats">
+                            <div class="stat-item">
+                                <span class="stat-label">Total Amount</span>
+                                <span class="stat-value">&#8377;45,000</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Amount Paid</span>
+                                <span class="stat-value stat-green">&#8377;11,250</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Remaining</span>
+                                <span class="stat-value stat-red">&#8377;33,750</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Shop Card 4 -->
+                <a href="#ledger" class="shop-card glass">
+                    <div class="shop-title">
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" fill="none"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                        </svg>
+                        Bhavani Textiles
+                    </div>
+                    <div class="shop-address">Cloth Market Secunderabad, 500003</div>
+
+                    <div style="margin-top: auto;">
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 100%;"></div>
+                        </div>
+                        <div class="progress-text">
+                            <span class="stat-green">Paid 100%</span>
+                            <span class="stat-red">Remaining 0%</span>
+                        </div>
+
+                        <div class="shop-stats">
+                            <div class="stat-item">
+                                <span class="stat-label">Total Amount</span>
+                                <span class="stat-value">&#8377;8,500</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Amount Paid</span>
+                                <span class="stat-value stat-green">&#8377;8,500</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Remaining</span>
+                                <span class="stat-value stat-red">&#8377;0</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </main>
+
+        <!-- Detailed Shop Ledger Modal -->
+        <div class="modal-overlay" id="ledger">
+            <a href="#" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; cursor: default;"></a>
+            <div class="modal-card large glass" style="position: relative; z-index: 10;">
+                <div class="modal-header">
+                    <div>
+                        <h2 class="modal-title">Ledger: Sai Kirana Store</h2>
+                        <div style="font-size: 15px; color: var(--text-muted); margin-top: 5px;">124 Main Street, Koti
+                            Market, Hyderabad</div>
+                    </div>
+                    <a href="#" class="close-btn" title="Close">&times;</a>
+                </div>
+
+                <div
+                    style="margin-bottom: 32px; background: rgba(255,255,255,0.3); padding: 20px; border-radius: 16px;">
+                    <div class="progress-container" style="height: 16px; border-radius: 8px;">
+                        <div class="progress-bar" style="width: 65%; border-radius: 8px;"></div>
+                    </div>
+                    <div class="progress-text" style="font-size: 15px; margin-top: 10px;">
+                        <span class="stat-green">65% Paid (&#8377;15,925)</span>
+                        <span class="stat-red">35% Remaining (&#8377;8,575)</span>
+                    </div>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <h3 style="font-size: 20px;">Entries & Transactions</h3>
+                    <button class="btn btn-primary" style="padding: 10px 20px; font-size: 14px;">+ Record
+                        Payment</button>
+                </div>
+
+                <table class="ledger-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Product Name</th>
+                            <th>Quantity</th>
+                            <th>Price/Item</th>
+                            <th>Total Amount</th>
+                            <th>Amount Paid</th>
+                            <th>Remaining</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Oct 20, 2026</td>
+                            <td>Sona Masoori Rice (25kg)</td>
+                            <td>10</td>
+                            <td>&#8377;1,250</td>
+                            <td>&#8377;12,500</td>
+                            <td class="stat-green">&#8377;8,000</td>
+                            <td class="stat-red">&#8377;4,500</td>
+                        </tr>
+                        <tr>
+                            <td>Oct 18, 2026</td>
+                            <td>Sunflower Oil (5L)</td>
+                            <td>20</td>
+                            <td>&#8377;600</td>
+                            <td>&#8377;12,000</td>
+                            <td class="stat-green">&#8377;7,925</td>
+                            <td class="stat-red">&#8377;4,075</td>
+                        </tr>
+                        <tr>
+                            <td>Oct 12, 2026</td>
+                            <td>Toor Dal (1kg)</td>
+                            <td>50</td>
+                            <td>&#8377;160</td>
+                            <td>&#8377;8,000</td>
+                            <td class="stat-green">&#8377;8,000</td>
+                            <td class="stat-red">&#8377;0</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Add Shop Form Modal -->
+        <div class="modal-overlay" id="add-shop">
+            <a href="#" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; cursor: default;"></a>
+            <div class="modal-card small glass" style="position: relative; z-index: 10;">
+                <div class="modal-header">
+                    <h2 class="modal-title">Add New Shop</h2>
+                    <a href="#" class="close-btn" title="Close">&times;</a>
+                </div>
+                <div class="input-group">
+                    <input type="text" class="input-field" placeholder="Shop / Business Name">
+                    <input type="text" class="input-field" placeholder="Owner Name">
+                    <input type="tel" class="input-field" placeholder="Phone Number">
+                    <textarea class="input-field" placeholder="Full Business Address"></textarea>
+                </div>
+                <div style="margin-top: 32px;">
+                    <a href="#" class="btn btn-primary" style="width: 100%;">Create Shop Profile</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Login Modal -->
+        <div class="modal-overlay" id="login">
+            <a href="#" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; cursor: default;"></a>
+            <div class="modal-card small glass" style="position: relative; z-index: 10;">
+                <div class="modal-header" style="justify-content: center; margin-bottom: 10px;">
+                    <h2 class="modal-title" style="font-size: 28px;">Welcome Back</h2>
+                    <a href="#" class="close-btn" style="position: absolute; right: 40px;" title="Close">&times;</a>
+                </div>
+                <p style="text-align: center; color: var(--text-muted); margin-bottom: 24px;">Manage your udhar
+                    effortlessly
+                </p>
+                <div class="input-group">
+                    <input type="email" class="input-field" placeholder="Email Address">
+                    <input type="password" class="input-field" placeholder="Password">
+                </div>
+                <div style="margin-top: 32px; display: flex; flex-direction: column; gap: 12px;">
+                    <a href="#" class="btn btn-primary" style="width: 100%;">Log In</a>
+                    <a href="#signup" class="btn" style="width: 100%;">Create an Account</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Signup Modal -->
+        <div class="modal-overlay" id="signup">
+            <a href="#" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; cursor: default;"></a>
+            <div class="modal-card small glass" style="position: relative; z-index: 10;">
+                <div class="modal-header" style="justify-content: center; margin-bottom: 10px;">
+                    <h2 class="modal-title" style="font-size: 28px;">Sign Up</h2>
+                    <a href="#" class="close-btn" style="position: absolute; right: 40px;" title="Close">&times;</a>
+                </div>
+                <p style="text-align: center; color: var(--text-muted); margin-bottom: 24px;">Start tracking credit with
+                    FINANCIO.kb</p>
+                <div class="input-group">
+                    <input type="text" class="input-field" placeholder="Full Name">
+                    <input type="email" class="input-field" placeholder="Email Address">
+                    <input type="password" class="input-field" placeholder="Password">
+                </div>
+                <div style="margin-top: 32px; display: flex; flex-direction: column; gap: 12px;">
+                    <a href="#" class="btn btn-primary" style="width: 100%;">Register</a>
+                    <a href="#login" class="btn" style="width: 100%;">Already have an account? Log In</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Modal -->
+        <div class="modal-overlay" id="contact">
+            <a href="#" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; cursor: default;"></a>
+            <div class="modal-card small glass" style="position: relative; z-index: 10;">
+                <div class="modal-header">
+                    <h2 class="modal-title">Contact Support</h2>
+                    <a href="#" class="close-btn" title="Close">&times;</a>
+                </div>
+                <p style="color: var(--text-muted); margin-bottom: 24px;">Need help with your ledger? Drop us a message.
+                </p>
+                <div class="input-group">
+                    <input type="text" class="input-field" placeholder="Your Name">
+                    <input type="email" class="input-field" placeholder="Email Address">
+                    <textarea class="input-field" placeholder="How can we help?"></textarea>
+                </div>
+                <div style="margin-top: 32px;">
+                    <a href="#" class="btn btn-primary" style="width: 100%;">Send Message</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

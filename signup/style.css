@@ -1,0 +1,126 @@
+/* Reset basic styles and apply the Montserrat font globally */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Dark background to mimic the Figma canvas */
+body {
+    background-color: #1e1e1e; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* The main grey panel */
+.app-container {
+    min-height: 100vh;
+    min-width: 100%;
+    background-color: #d1d8e0; /* Light grey-blue */
+}
+
+/* Header Styling */
+.top-nav {
+    background-color: #52616B; /* Darker grey-blue for the header */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 15px;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: 900;
+    color: #1E2022;
+    letter-spacing: 1px;
+    font-family: krona one;
+}
+
+.top-nav nav a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 13px;
+    margin-left: 25px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-family: darker grotesque;
+}
+
+.top-nav nav a:hover {
+    color: #000;
+}
+
+/* Form Area Styling */
+
+.form-section {
+    padding: 70px 20px 90px 20px;
+    text-align: center;
+    margin-left: 500px;
+    margin-right: 500px;
+}
+
+.form-section h2 {
+    font-family: krona one;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 45px;
+    color: #1E2022;
+}
+
+.main {
+    background-color: #8c9da8;
+    border-radius: 6px;
+    padding: 22px 25px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding:8px 15px;
+}
+
+/* Input Fields */
+input {
+    width: 100%;
+    max-width: 500px;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 12px;
+    background-color: #ffffff;
+    color: #333;
+    outline: none;
+}
+
+input:focus {
+    box-shadow: 0 0 0 2px #8c9da8; /* Subtle focus ring */
+}
+
+input::placeholder {
+    color: #95a5a6;
+    font-weight: 400;
+}
+
+/* Button Styling */
+button {
+    margin-top: 15px;
+    padding: 12px 50px;
+    background-color: #aeb8c3; /* Matches the specific grey of the button */
+    color: #ffffff;
+    border: none;
+    border-radius: 25px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    background-color: #9aa5b1;
+    transform: translateY(-1px);
+}
