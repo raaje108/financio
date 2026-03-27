@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financio - Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <header class="top-nav">
+            <div class="logo">FINANCIO</div>
+            <nav>
+                <a href="#">MAIN MENU</a>
+                <a href="#">HOME</a>
+                <a href="index.html">SIGNUP</a>
+                <a href="#">CONTACT US</a>
+            </nav>
+        </header>
+
+        <main class="form-section">
+            <h2>USER LOGIN</h2>
+            <div class="main">
+                <form id="loginForm">
+                    <input type="text" id="identifier" placeholder="Enter Email or Phone No." required>
+                    <input type="password" id="password" placeholder="Enter Password" required>
+                    
+                    <button type="submit">LOGIN</button>
+                </form>
+            </div>
+        </main>
+    </div>
+
+
+
+    <script>
+        const loginForm = document.getElementById('loginForm');
+
+        loginForm.addEventListener('submit', async (e) => {
+            // Stop the 405 error! Tell the browser we will handle the submission manually.
+            e.preventDefault(); 
+
+            // Grab the values the user typed
+            const identifier = document.getElementById('identifier').value;
+            const password = document.getElementById('password').value;
+
+            try {
+                // Point to your running Express backend
+                const response = await fetch('http://localhost:8000/api/v1/users/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ identifier, password })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    alert('Login successful!');
+                    
+                    // Save the secure token to the browser's memory
+                    localStorage.setItem('financioToken', data.token);
+                    localStorage.setItem('financioUser', JSON.stringify(data.user));
+                    
+                    // Redirect them to the main dashboard!
+                    // Assuming your dashboard is the main index.html in the root folder
+                    window.location.href = '../main/index.html';
+                    
+                } else {
+                    alert(`Login Failed: ${data.message}`);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Could not connect to the server. Is your backend running on port 8000?');
+            }
+        });
+    </script>
+</body>
+</html>

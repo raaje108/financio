@@ -425,6 +425,8 @@ textarea.input-field {
 .btn-primary {
     background: var(--text-main);
     color: var(--white);
+    border-radius: 10px;
+    
 }
 
 .btn-primary:hover {
