@@ -57,7 +57,7 @@ body {
     font-weight: 900;
     color: #1E2022;
     letter-spacing: 1px;
-    font-family: 'Krona One', sans-serif;
+    font-family: krona one;
 }
 
 .sidebar-menu {
@@ -107,16 +107,12 @@ body {
     margin-left: 25px;
     font-weight: 600;
     text-transform: uppercase;
-    font-family: 'Darker Grotesque', sans-serif;
+    font-family: darker grotesque;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 5px 15px;
-}
-
-.logo h1 {
-    font-family: 'Krona One', sans-serif;
-    color: #2c3e50;
+    
 }
 
 .brand {
@@ -135,6 +131,8 @@ body {
     display: flex;
     gap: 15px;
 }
+
+
 
 .nav-item {
     padding: 10px 20px;
@@ -242,8 +240,13 @@ body {
     font-weight: 700;
 }
 
-.stat-red { color: var(--red); }
-.stat-green { color: var(--green); }
+.stat-red {
+    color: var(--red);
+}
+
+.stat-green {
+    color: var(--green);
+}
 
 /* Ledger Table */
 .ledger-table {
@@ -330,12 +333,15 @@ body {
     flex-direction: column;
     pointer-events: auto;
     overflow-y: auto;
-    position: relative;
-    z-index: 10;
 }
 
-.modal-card.large { width: 1000px; }
-.modal-card.small { width: 450px; }
+.modal-card.large {
+    width: 1000px;
+}
+
+.modal-card.small {
+    width: 450px;
+}
 
 .modal-header {
     display: flex;
@@ -419,151 +425,10 @@ textarea.input-field {
 .btn-primary {
     background: var(--text-main);
     color: var(--white);
-    border-radius: 10px;
 }
 
 .btn-primary:hover {
     background: var(--text-muted);
-}
-
-/* -------------------------------------- */
-/* Added Utility Classes (Extracted HTML) */
-/* -------------------------------------- */
-
-.text-emerald { color: #10b981; }
-.text-amber { color: #f59e0b; }
-.text-slate { color: #64748b; }
-.text-pink { color: #ec4899; }
-
-.mt-auto { margin-top: auto; }
-.w-100 { width: 100%; }
-.text-center { text-align: center; }
-.mt-16 { margin-top: 16px; }
-.mt-32 { margin-top: 32px; }
-
-/* Modal specific extracted styles */
-.modal-subtitle {
-    font-size: 14px;
-    color: var(--text-muted);
-    margin-top: 5px;
-    line-height: 1.6;
-}
-
-.owner-info {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    margin-top: 8px;
-    color: #475569;
-}
-
-.contact-info {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    margin-top: 4px;
-    color: #475569;
-}
-
-.ledger-summary {
-    margin-bottom: 32px;
-    background: rgba(255, 255, 255, 0.3);
-    padding: 20px;
-    border-radius: 16px;
-}
-
-.progress-container.lg {
-    height: 16px;
-    border-radius: 8px;
-}
-
-.progress-bar.lg {
-    border-radius: 8px;
-}
-
-.progress-text.lg {
-    font-size: 15px;
-    margin-top: 10px;
-}
-
-.section-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.section-header h3 {
-    font-size: 20px;
-    font-weight: 600;
-}
-
-.btn-sm {
-    padding: 10px 20px;
-    font-size: 14px;
-}
-
-.text-accent-medium {
-    color: #475569;
-    font-weight: 500;
-}
-
-.btn-note {
-    display: inline-block;
-    padding: 4px 10px;
-    font-size: 11px;
-    background: #f8fafc;
-    border: 1px solid #e2e8f0;
-    border-radius: 6px;
-    color: #475569;
-    text-decoration: none;
-    transition: all 0.2s ease;
-}
-
-.btn-note:hover {
-    background: #e2e8f0;
-}
-
-.modal-bg-click {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    cursor: default;
-}
-
-.modal-header-center {
-    justify-content: center;
-    margin-bottom: 10px;
-}
-
-.modal-title-lg {
-    font-size: 28px;
-}
-
-.close-btn-abs {
-    position: absolute;
-    right: 40px;
-}
-
-.modal-desc {
-    text-align: center;
-    color: var(--text-muted);
-    margin-bottom: 24px;
-}
-
-.form-actions {
-    margin-top: 32px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.note-textarea {
-    min-height: 100px;
-    padding: 12px;
-    margin-bottom: 8px;
 }
 
 /* Responsive */
@@ -611,7 +476,7 @@ textarea.input-field {
     .modal-card {
         padding: 24px;
     }
- 
+
     .ledger-table {
         display: block;
         overflow-x: auto;

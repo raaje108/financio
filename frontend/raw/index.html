@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+
+    </header>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2 class="sidebar-brand">USERNAME</h2>
+        <div class="sidebar-menu">
+            <a href="#" class="sidebar-item active">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="14" width="7" height="7"></rect>
+                    <rect x="3" y="14" width="7" height="7"></rect>
+                </svg>
+                All Notes
+            </a>
+            <a href="#" class="sidebar-item">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                    </path>
+                </svg>
+                Favorites
+            </a>
+            <a href="#" class="sidebar-item">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="1" x2="12" y2="23"></line>
+                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                </svg>
+                Transactions
+            </a>
+        </div>
+    </aside>
+
+    <div class="content-wrapper">
+        <!-- Top Navbar -->
+        <nav class="navbar glass">
+            <div class="logo">
+                <h1 style="font-family: krona one;color: #2c3e50;">FINANCIO</h1>
+            </div>
+            <div class="nav-menu">
+                <a href="#" class="nav-item active">Home</a>
+                <a href="#shops" class="nav-item">Shops</a>
+                <a href="#add-shop" class="nav-item">Add Shop</a>
+                <a href="#login" class="nav-item">Login</a>
+                <a href="#contact" class="nav-item">Contact</a>
+            </div>
+        </nav>
+
+        <!-- Main Dashboard -->
+        <main class="main-content" id="shops">
+            <div class="header">
+                <h1>Your Shops & Logistics</h1>
+                <a href="#add-shop" class="btn btn-primary">+ New Shop</a>
+            </div>
+
+            <div class="shops-grid">
+                <!-- Shop Card 1 -->
+                <a href="#ledger" class="shop-card glass">
+                    <div class="shop-title">
+                        <!-- Shopping Bag -->
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #10b981;">
+                            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path>
+                        </svg>
+                        Sai Kirana Store
+                    </div>
+                    <div class="shop-address">124 Main Street, Koti Market, Hyderabad, 500001</div>
+
+                    <div style="margin-top: auto;">
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 65%;"></div>
+                        </div>
+                        <div class="progress-text">
+                            <span class="stat-green">Paid 65%</span>
+                            <span class="stat-red">Remaining 35%</span>
+                        </div>
+
+                        <div class="shop-stats">
+                            <div class="stat-item">
+                                <span class="stat-label">Total Amount</span>
+                                <span class="stat-value">&#8377;24,500</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Amount Paid</span>
+                                <span class="stat-value stat-green">&#8377;15,925</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Remaining</span>
+                                <span class="stat-value stat-red">&#8377;8,575</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Shop Card 2 -->
+                <a href="#ledger" class="shop-card glass">
+                    <div class="shop-title">
+                        <!-- Thunder/Electrical -->
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #f59e0b;">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                        </svg>
+                        Rahul Electronics
+                    </div>
+                    <div class="shop-address">Shop 4A, Electronics Plaza, Ameerpet, 500016</div>
+
+                    <div style="margin-top: auto;">
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 90%;"></div>
+                        </div>
+                        <div class="progress-text">
+                            <span class="stat-green">Paid 90%</span>
+                            <span class="stat-red">Remaining 10%</span>
+                        </div>
+
+                        <div class="shop-stats">
+                            <div class="stat-item">
+                                <span class="stat-label">Total Amount</span>
+                                <span class="stat-value">&#8377;1,20,000</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Amount Paid</span>
+                                <span class="stat-value stat-green">&#8377;1,08,000</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Remaining</span>
+                                <span class="stat-value stat-red">&#8377;12,000</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Shop Card 3 -->
+                <a href="#ledger" class="shop-card glass">
+                    <div class="shop-title">
+                        <!-- Wrench/Hardware -->
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #64748b;">
+                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                        </svg>
+                        Verma Hardware
+                    </div>
+                    <div class="shop-address">Plot 12, Industrial Area, Medchal, 501401</div>
+
+                    <div style="margin-top: auto;">
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 25%;"></div>
+                        </div>
+                        <div class="progress-text">
+                            <span class="stat-green">Paid 25%</span>
+                            <span class="stat-red">Remaining 75%</span>
+                        </div>
+
+                        <div class="shop-stats">
+                            <div class="stat-item">
+                                <span class="stat-label">Total Amount</span>
+                                <span class="stat-value">&#8377;45,000</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Amount Paid</span>
+                                <span class="stat-value stat-green">&#8377;11,250</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Remaining</span>
+                                <span class="stat-value stat-red">&#8377;33,750</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Shop Card 4 -->
+                <a href="#ledger" class="shop-card glass">
+                    <div class="shop-title">
+                        <!-- Tag/Textiles -->
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #ec4899;">
+                            <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line>
+                        </svg>
+                        Bhavani Textiles
+                    </div>
+                    <div class="shop-address">Cloth Market Secunderabad, 500003</div>
+
+                    <div style="margin-top: auto;">
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 100%;"></div>
+                        </div>
+                        <div class="progress-text">
+                            <span class="stat-green">Paid 100%</span>
+                            <span class="stat-red">Remaining 0%</span>
+                        </div>
+
+                        <div class="shop-stats">
+                            <div class="stat-item">
+                                <span class="stat-label">Total Amount</span>
+                                <span class="stat-value">&#8377;8,500</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Amount Paid</span>
+                                <span class="stat-value stat-green">&#8377;8,500</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Remaining</span>
+                                <span class="stat-value stat-red">&#8377;0</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </main>
+
+        <!-- Detailed Shop Ledger Modal -->
+        <div class="modal-overlay" id="ledger">
+            <a href="#" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; cursor: default;"></a>
+            <div class="modal-card large glass" style="position: relative; z-index: 10;">
+                <div class="modal-header">
+                    <div>
+                        <h2 class="modal-title">Ledger: Sai Kirana Store</h2>
+                        <div style="font-size: 15px; color: var(--text-muted); margin-top: 5px;">
+                            124 Main Street, Koti Market, Hyderabad<br>
+                            <div class="modal-contact" style="margin-top: 8px;">
+                                <div style="font-weight: 600; color: #2c3e50; display: flex; align-items: center; gap: 5px;">
+                                    <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                    Rajesh Kumar (Owner)
+                                </div>
+                                <span style="display: flex; align-items: center; gap: 5px; margin-top: 4px; font-weight: 500; color: #64748b;">
+                                    <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                    +91 98480 12345
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="close-btn" title="Close">&times;</a>
+                </div>
+
+                <div
+                    style="margin-bottom: 32px; background: rgba(255,255,255,0.3); padding: 20px; border-radius: 16px;">
+                    <div class="progress-container" style="height: 16px; border-radius: 8px;">
+                        <div class="progress-bar" style="width: 65%; border-radius: 8px;"></div>
+                    </div>
+                    <div class="progress-text" style="font-size: 15px; margin-top: 10px;">
+                        <span class="stat-green">65% Paid (&#8377;15,925)</span>
+                        <span class="stat-red">35% Remaining (&#8377;8,575)</span>
+                    </div>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <h3 style="font-size: 20px;">Entries & Transactions</h3>
+                    <button class="btn btn-primary" style="padding: 10px 20px; font-size: 14px;">+ Record
+                        Payment</button>
+                </div>
+
+                <table class="ledger-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Product Name</th>
+                            <th>Quantity</th>
+                            <th>Price/Item</th>
+                            <th>Total Amount</th>
+                            <th>Amount Paid</th>
+                            <th>Payment Type</th>
+                            <th>Remaining</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Oct 20, 2026</td>
+                            <td>Sona Masoori Rice (25kg)</td>
+                            <td>10</td>
+                            <td>&#8377;1,250</td>
+                            <td>&#8377;12,500</td>
+                            <td class="stat-green">&#8377;8,000</td>
+                            <td>UPI</td>
+                            <td class="stat-red">&#8377;4,500</td>
+                            <td class="note-cell" style="cursor: pointer; color: var(--text-muted); min-width: 120px; transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.5)'" onmouseout="this.style.background='transparent'" title="Click to edit">Click to add note</td>
+                        </tr>
+                        <tr>
+                            <td>Oct 18, 2026</td>
+                            <td>Sunflower Oil (5L)</td>
+                            <td>20</td>
+                            <td>&#8377;600</td>
+                            <td>&#8377;12,000</td>
+                            <td class="stat-green">&#8377;7,925</td>
+                            <td>Cash</td>
+                            <td class="stat-red">&#8377;4,075</td>
+                            <td class="note-cell" style="min-width: 120px;" data-full-note=""><button class="add-note-btn btn" style="padding: 6px 10px; font-size: 12px; border-radius: 6px; background: rgba(255,255,255,0.5); border: 1px solid var(--glass-border); color: var(--text-main); cursor: pointer; transition: background 0.2s;" onmouseover="this.style.background='#fff'" onmouseout="this.style.background='rgba(255,255,255,0.5)'">+ Add Note</button></td>
+                        </tr>
+                        <tr>
+                            <td>Oct 12, 2026</td>
+                            <td>Toor Dal (1kg)</td>
+                            <td>50</td>
+                            <td>&#8377;160</td>
+                            <td>&#8377;8,000</td>
+                            <td class="stat-green">&#8377;8,000</td>
+                            <td>Bank Transfer</td>
+                            <td class="stat-red">&#8377;0</td>
+                            <td class="note-cell" style="min-width: 120px;" data-full-note=""><button class="add-note-btn btn" style="padding: 6px 10px; font-size: 12px; border-radius: 6px; background: rgba(255,255,255,0.5); border: 1px solid var(--glass-border); color: var(--text-main); cursor: pointer; transition: background 0.2s;" onmouseover="this.style.background='#fff'" onmouseout="this.style.background='rgba(255,255,255,0.5)'">+ Add Note</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Add Shop Form Modal -->
+        <div class="modal-overlay" id="add-shop">
+            <a href="#" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; cursor: default;"></a>
+            <div class="modal-card small glass" style="position: relative; z-index: 10;">
+                <div class="modal-header">
+                    <h2 class="modal-title">Add New Shop</h2>
+                    <a href="#" class="close-btn" title="Close">&times;</a>
+                </div>
+                <div class="input-group">
+                    <input type="text" class="input-field" placeholder="Shop / Business Name">
+                    <input type="text" class="input-field" placeholder="Owner Name">
+                    <input type="tel" class="input-field" placeholder="Phone Number">
+                    <textarea class="input-field" placeholder="Full Business Address"></textarea>
+                </div>
+                <div style="margin-top: 32px;">
+                    <a href="#" class="btn btn-primary" style="width: 100%;">Create Shop Profile</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Login Modal -->
+        <div class="modal-overlay" id="login">
+            <a href="#" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; cursor: default;"></a>
+            <div class="modal-card small glass" style="position: relative; z-index: 10;">
+                <div class="modal-header" style="justify-content: center; margin-bottom: 10px;">
+                    <h2 class="modal-title" style="font-size: 28px;">Welcome Back</h2>
+                    <a href="#" class="close-btn" style="position: absolute; right: 40px;" title="Close">&times;</a>
+                </div>
+                <p style="text-align: center; color: var(--text-muted); margin-bottom: 24px;">Manage your udhar
+                    effortlessly
+                </p>
+                <div class="input-group">
+                    <input type="email" class="input-field" placeholder="Email Address">
+                    <input type="password" class="input-field" placeholder="Password">
+                </div>
+                <div style="margin-top: 32px; display: flex; flex-direction: column; gap: 12px;">
+                    <a href="#" class="btn btn-primary" style="width: 100%;">Log In</a>
+                    <a href="#signup" class="btn" style="width: 100%;">Create an Account</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Signup Modal -->
+        <div class="modal-overlay" id="signup">
+            <a href="#" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; cursor: default;"></a>
+            <div class="modal-card small glass" style="position: relative; z-index: 10;">
+                <div class="modal-header" style="justify-content: center; margin-bottom: 10px;">
+                    <h2 class="modal-title" style="font-size: 28px;">Sign Up</h2>
+                    <a href="#" class="close-btn" style="position: absolute; right: 40px;" title="Close">&times;</a>
+                </div>
+                <p style="text-align: center; color: var(--text-muted); margin-bottom: 24px;">Start tracking credit with
+                    FINANCIO.kb</p>
+                <div class="input-group">
+                    <input type="text" class="input-field" placeholder="Full Name">
+                    <input type="email" class="input-field" placeholder="Email Address">
+                    <input type="password" class="input-field" placeholder="Password">
+                </div>
+                <div style="margin-top: 32px; display: flex; flex-direction: column; gap: 12px;">
+                    <a href="#" class="btn btn-primary" style="width: 100%;">Register</a>
+                    <a href="#login" class="btn" style="width: 100%;">Already have an account? Log In</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Modal -->
+        <div class="modal-overlay" id="contact">
+            <a href="#" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; cursor: default;"></a>
+            <div class="modal-card small glass" style="position: relative; z-index: 10;">
+                <div class="modal-header">
+                    <h2 class="modal-title">Contact Support</h2>
+                    <a href="#" class="close-btn" title="Close">&times;</a>
+                </div>
+                <p style="color: var(--text-muted); margin-bottom: 24px;">Need help with your ledger? Drop us a message.
+                </p>
+                <div class="input-group">
+                    <input type="text" class="input-field" placeholder="Your Name">
+                    <input type="email" class="input-field" placeholder="Email Address">
+                    <textarea class="input-field" placeholder="How can we help?"></textarea>
+                </div>
+                <div style="margin-top: 32px;">
+                    <a href="#" class="btn btn-primary" style="width: 100%;">Send Message</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+        <!-- Edit Note Modal -->
+        <div class="modal-overlay" id="edit-note">
+            <a href="#ledger" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; cursor: default;"></a>
+            <div class="modal-card small glass" style="position: relative; z-index: 10;">
+                <div class="modal-header">
+                    <h2 class="modal-title">Transaction Note</h2>
+                    <a href="#ledger" class="close-btn" title="Close">&times;</a>
+                </div>
+                <div class="input-group">
+                    <textarea id="floating-note-input" class="input-field" placeholder="Write a note or reminder for this specific transaction..." style="min-height: 120px;"></textarea>
+                </div>
+                <div style="margin-top: 32px;">
+                    <a href="#ledger" id="save-floating-note" class="btn btn-primary" style="width: 100%;">Save Note</a>
+                </div>
+            </div>
+        </div>
+
+    <!-- Dynamic Modal & LocalStorage Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const modalTitle = document.querySelector('#ledger .modal-title');
+            const modalAddressText = modalTitle.nextElementSibling;
+            let currentKey = '';
+            let activeNoteCell = null;
+
+            document.querySelectorAll('a[href="#ledger"]').forEach(card => {
+                card.addEventListener('click', function() {
+                    const title = this.querySelector('.shop-title').innerText.trim();
+                    const address = this.querySelector('.shop-address').innerText.trim();
+                    
+                    currentKey = 'financio-tbl-notes-' + title;
+                    
+                    // Update Modal header information dynamically
+                    const isSupplier = modalTitle.innerText.includes('Supplier');
+                    modalTitle.innerText = (isSupplier ? 'Supplier Ledger: ' : 'Ledger: ') + title;
+                    
+                    const contactDiv = modalAddressText.querySelector('.modal-contact');
+                    const contactHTML = contactDiv ? contactDiv.outerHTML : '';
+                    modalAddressText.innerHTML = address + '<br>' + contactHTML;
+                    
+                    // Load notes for rows
+                    const savedNotes = JSON.parse(localStorage.getItem(currentKey) || '[]');
+                    document.querySelectorAll('#ledger .note-cell').forEach((cell, index) => {
+                        const noteText = savedNotes[index] || '';
+                        cell.dataset.fullNote = noteText;
+                        if (noteText.trim() === '') {
+                            cell.innerHTML = '<button class="add-note-btn btn" style="padding: 6px 10px; font-size: 12px; border-radius: 6px; background: rgba(255,255,255,0.5); border: 1px solid var(--glass-border); color: var(--text-main); cursor: pointer; transition: background 0.2s;" onmouseover="this.style.background=\'#fff\'" onmouseout="this.style.background=\'rgba(255,255,255,0.5)\'">+ Add Note</button>';
+                        } else {
+                            const displayTxt = noteText.length > 20 ? noteText.substring(0, 20) + '...' : noteText;
+                            cell.innerHTML = `<div class="note-content" style="cursor: pointer; color: var(--text-main); font-size: 13px; font-weight: 500; display: flex; align-items: center; justify-content: space-between;"><span title="${noteText.replace(/"/g, '&quot;')}">${displayTxt}</span> <svg viewBox="0 0 24 24" width="14" height="14" stroke="#64748b" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:5px;"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg></div>`;
+                        }
+                    });
+                });
+            });
+
+            // Handle clicking a note cell to open floating window
+            document.querySelectorAll('#ledger .note-cell').forEach(cell => {
+                cell.addEventListener('click', function() {
+                    activeNoteCell = this;
+                    document.getElementById('floating-note-input').value = this.dataset.fullNote || '';
+                    window.location.hash = 'edit-note';
+                });
+            });
+
+            // Save note from floating window
+            document.getElementById('save-floating-note').addEventListener('click', function() {
+                if (activeNoteCell) {
+                    const val = document.getElementById('floating-note-input').value.trim();
+                    activeNoteCell.dataset.fullNote = val;
+                    
+                    if (val === '') {
+                        activeNoteCell.innerHTML = '<button class="add-note-btn btn" style="padding: 6px 10px; font-size: 12px; border-radius: 6px; background: rgba(255,255,255,0.5); border: 1px solid var(--glass-border); color: var(--text-main); cursor: pointer; transition: background 0.2s;" onmouseover="this.style.background=\'#fff\'" onmouseout="this.style.background=\'rgba(255,255,255,0.5)\'">+ Add Note</button>';
+                    } else {
+                        const displayTxt = val.length > 20 ? val.substring(0, 20) + '...' : val;
+                        activeNoteCell.innerHTML = `<div class="note-content" style="cursor: pointer; color: var(--text-main); font-size: 13px; font-weight: 500; display: flex; align-items: center; justify-content: space-between;"><span title="${val.replace(/"/g, '&quot;')}">${displayTxt}</span> <svg viewBox="0 0 24 24" width="14" height="14" stroke="#64748b" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:5px;"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg></div>`;
+                    }
+                    
+                    // Save all cells to local storage
+                    const notesArray = Array.from(document.querySelectorAll('#ledger .note-cell')).map(c => c.dataset.fullNote || '');
+                    localStorage.setItem(currentKey, JSON.stringify(notesArray));
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
