@@ -4,47 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Financio - Login</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;600;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">   
 </head>
 <body>
 
-    <div class="app-container">
-        <header class="top-nav">
-            <div class="logo">FINANCIO</div>
-            <nav>
-                <a href="#">MAIN MENU</a>
-                <a href="#">HOME</a>
-                <a href="index.html">SIGNUP</a>
-                <a href="#">CONTACT US</a>
-            </nav>
-        </header>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><i class="fas fa-wallet"></i></div>
+                <span class="logo-text">FINANCIO</span>
+            </a>
+            <a href="../signup/index.html" class="btn-nav">Sign Up</a>
+        </div>
+    </nav>
 
-        <main class="form-section">
-            <h2>USER LOGIN</h2>
-            <div class="main">
-                <form id="loginForm">
-                    <input type="text" id="identifier" placeholder="Enter Email or Phone No." required>
-                    <input type="password" id="password" placeholder="Enter Password" required>
-                    
-                    <button type="submit">LOGIN</button>
-                </form>
+    <main>
+        <div class="content-wrapper">
+            <!-- Left Side: Interesting Info -->
+            <div class="info-section">
+                <div class="info-header">
+                    <h1>Welcome back to <span>Financio.</span></h1>
+                    <p>Manage your transactions, track debts, and keep your business records clean and secure with our digital ledger.</p>
+                </div>
+
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-user-shield"></i></div>
+                        <div class="feature-text">
+                            <h4>Secure Access</h4>
+                            <p>Multi-layer encryption keeps your business data private and secure at all times.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-sync-alt"></i></div>
+                        <div class="feature-text">
+                            <h4>Real-time Sync</h4>
+                            <p>Log in from any device and see your latest entries updated instantly on the cloud.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-headset"></i></div>
+                        <div class="feature-text">
+                            <h4>24/7 Support</h4>
+                            <p>Our team is here to help you manage your business cashflow without any hurdles.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </main>
-    </div>
 
+            <!-- Right Side: The Login Card -->
+            <div class="login-card">
+                <h2>User Login</h2>
+                <p class="subtitle">Access your digital ledger dashboard</p>
+                
+                <form id="loginForm">
+                    <div class="input-group">
+                        <label for="identifier">Email or Phone</label>
+                        <input type="text" id="identifier" placeholder="e.g. name@example.com" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="••••••••" required>
+                    </div>
+                    
+                    <button type="submit">Login to Dashboard</button>
+                </form>
 
+                <p class="footer-text">
+                    Don't have an account? <a href="../signup/index.html">Sign Up Free</a>
+                </p>
+            </div>
+        </div>
+    </main>
 
     <script>
         const loginForm = document.getElementById('loginForm');
 
         loginForm.addEventListener('submit', async (e) => {
-            // Stop the 405 error! Tell the browser we will handle the submission manually.
             e.preventDefault(); 
 
-            // Grab the values the user typed
             const identifier = document.getElementById('identifier').value;
             const password = document.getElementById('password').value;
 
@@ -59,16 +100,12 @@
                 const data = await response.json();
 
                 if (response.ok) {
-                    alert('Login successful!');
-                    
-                    // Save the secure token to the browser's memory
+                    console.log('Login successful!');
                     localStorage.setItem('financioToken', data.token);
                     localStorage.setItem('financioUser', JSON.stringify(data.user));
                     
-                    // Redirect them to the main dashboard!
-                    // Assuming your dashboard is the main index.html in the root folder
+                    // Redirect to dashboard
                     window.location.href = '../main/index.html';
-                    
                 } else {
                     alert(`Login Failed: ${data.message}`);
                 }

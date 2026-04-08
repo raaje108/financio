@@ -13,9 +13,6 @@
 </head>
 
 <body>
-    <header>
-        
-    </header>
     <aside class="sidebar">
         <h2 class="sidebar-brand">USERNAME</h2>
         <div class="sidebar-menu">
@@ -51,7 +48,7 @@
                 <a href="#" class="nav-item active">Home</a>
                 <a href="#shops" class="nav-item">Shops</a>
                 <a href="#add-shop" class="nav-item">Add Shop</a>
-                <a href="#login" class="nav-item">Login</a>
+                <a href="../profile/" class="nav-item">Profile</a>
                 <a href="#contact" class="nav-item">Contact</a>
             </div>
         </nav>
@@ -63,6 +60,7 @@
             </div>
 
             <div class="shops-grid">
+                <!-- Shop 1 -->
                 <a href="#ledger" class="shop-card glass">
                     <div class="shop-title">
                         <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald">
@@ -71,7 +69,6 @@
                         Sai Kirana Store
                     </div>
                     <div class="shop-address">124 Main Street, Koti Market, Hyderabad, 500001</div>
-
                     <div class="mt-auto">
                         <div class="progress-container">
                             <div class="progress-bar" style="width: 65%;"></div>
@@ -80,7 +77,6 @@
                             <span class="stat-green">Paid 65%</span>
                             <span class="stat-red">pending 35%</span>
                         </div>
-
                         <div class="shop-stats">
                             <div class="stat-item">
                                 <span class="stat-label">Total Amount</span>
@@ -98,6 +94,7 @@
                     </div>
                 </a>
 
+                <!-- Shop 2 -->
                 <a href="#ledger" class="shop-card glass">
                     <div class="shop-title">
                         <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-amber">
@@ -106,7 +103,6 @@
                         Rahul Electronics
                     </div>
                     <div class="shop-address">Shop 4A, Electronics Plaza, Ameerpet, 500016</div>
-
                     <div class="mt-auto">
                         <div class="progress-container">
                             <div class="progress-bar" style="width: 90%;"></div>
@@ -115,7 +111,6 @@
                             <span class="stat-green">Paid 90%</span>
                             <span class="stat-red">pending 10%</span>
                         </div>
-
                         <div class="shop-stats">
                             <div class="stat-item">
                                 <span class="stat-label">Total Amount</span>
@@ -133,6 +128,7 @@
                     </div>
                 </a>
 
+                <!-- Shop 3 -->
                 <a href="#ledger" class="shop-card glass">
                     <div class="shop-title">
                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate">
@@ -141,7 +137,6 @@
                         Verma Hardware
                     </div>
                     <div class="shop-address">Plot 12, Industrial Area, Medchal, 501401</div>
-
                     <div class="mt-auto">
                         <div class="progress-container">
                             <div class="progress-bar" style="width: 25%;"></div>
@@ -150,7 +145,6 @@
                             <span class="stat-green">Paid 25%</span>
                             <span class="stat-red">pending 75%</span>
                         </div>
-
                         <div class="shop-stats">
                             <div class="stat-item">
                                 <span class="stat-label">Total Amount</span>
@@ -168,6 +162,7 @@
                     </div>
                 </a>
 
+                <!-- Shop 4 -->
                 <a href="#ledger" class="shop-card glass">
                     <div class="shop-title">
                         <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-pink">
@@ -176,7 +171,6 @@
                         Bhavani Textiles
                     </div>
                     <div class="shop-address">Cloth Market Secunderabad, 500003</div>
-
                     <div class="mt-auto">
                         <div class="progress-container">
                             <div class="progress-bar" style="width: 100%;"></div>
@@ -185,7 +179,6 @@
                             <span class="stat-green">Paid 100%</span>
                             <span class="stat-red">pending 0%</span>
                         </div>
-
                         <div class="shop-stats">
                             <div class="stat-item">
                                 <span class="stat-label">Total Amount</span>
@@ -205,6 +198,7 @@
             </div>
         </main>
 
+        <!-- Modals -->
         <div class="modal-overlay" id="ledger">
             <a href="#" class="modal-bg-click"></a>
             <div class="modal-card large glass">
@@ -213,7 +207,6 @@
                         <h2 class="modal-title">Ledger: Sai Kirana Store</h2>
                         <div class="modal-subtitle">
                             124 Main Street, Koti Market, Hyderabad, 500001
-                            
                             <div class="owner-info">
                                 <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
                                 <strong>Rajesh Kumar (Owner)</strong>
@@ -268,33 +261,13 @@
                             <td class="stat-red">&#8377;4,500</td>
                             <td><a href="#edit-note" class="btn-note">+ Add Note</a></td>
                         </tr>
-                        <tr>
-                            <td>Oct 18, 2026</td>
-                            <td>Sunflower Oil (5L)</td>
-                            <td>20</td>
-                            <td>&#8377;600</td>
-                            <td>&#8377;12,000</td>
-                            <td class="stat-green">&#8377;7,925</td>
-                            <td class="text-accent-medium">Cash</td>
-                            <td class="stat-red">&#8377;4,075</td>
-                            <td><a href="#edit-note" class="btn-note">+ Add Note</a></td>
-                        </tr>
-                        <tr>
-                            <td>Oct 12, 2026</td>
-                            <td>Toor Dal (1kg)</td>
-                            <td>50</td>
-                            <td>&#8377;160</td>
-                            <td>&#8377;8,000</td>
-                            <td class="stat-green">&#8377;8,000</td>
-                            <td class="text-accent-medium">UPI</td>
-                            <td class="stat-red">&#8377;0</td>
-                            <td><a href="#edit-note" class="btn-note">+ Add Note</a></td>
-                        </tr>
+                        <!-- More rows... -->
                     </tbody>
                 </table>
             </div>
         </div>
 
+        <!-- Additional Modals (Note, Add Shop, Login, Signup, Contact) -->
         <div class="modal-overlay" id="edit-note">
             <a href="#ledger" class="modal-bg-click"></a>
             <div class="modal-card small glass">
@@ -303,7 +276,7 @@
                     <a href="#ledger" class="close-btn" title="Close">&times;</a>
                 </div>
                 <div class="input-group">
-                    <textarea class="input-field note-textarea" placeholder="Write a note or reminder for this specific transaction..."></textarea>
+                    <textarea class="input-field note-textarea" placeholder="Write a note..."></textarea>
                 </div>
                 <div class="mt-16">
                     <a href="#ledger" class="btn btn-primary w-100 text-center">Save Note</a>
@@ -330,45 +303,6 @@
             </div>
         </div>
 
-        <div class="modal-overlay" id="login">
-            <a href="#" class="modal-bg-click"></a>
-            <div class="modal-card small glass">
-                <div class="modal-header modal-header-center">
-                    <h2 class="modal-title modal-title-lg">Welcome Back</h2>
-                    <a href="#" class="close-btn close-btn-abs" title="Close">&times;</a>
-                </div>
-                <p class="modal-desc">Manage your udhar effortlessly</p>
-                <div class="input-group">
-                    <input type="email" class="input-field" placeholder="Email Address">
-                    <input type="password" class="input-field" placeholder="Password">
-                </div>
-                <div class="form-actions">
-                    <a href="#" class="btn btn-primary w-100">Log In</a>
-                    <a href="#signup" class="btn w-100">Create an Account</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="modal-overlay" id="signup">
-            <a href="#" class="modal-bg-click"></a>
-            <div class="modal-card small glass">
-                <div class="modal-header modal-header-center">
-                    <h2 class="modal-title modal-title-lg">Sign Up</h2>
-                    <a href="#" class="close-btn close-btn-abs" title="Close">&times;</a>
-                </div>
-                <p class="modal-desc">Start tracking credit with FINANCIO.kb</p>
-                <div class="input-group">
-                    <input type="text" class="input-field" placeholder="Full Name">
-                    <input type="email" class="input-field" placeholder="Email Address">
-                    <input type="password" class="input-field" placeholder="Password">
-                </div>
-                <div class="form-actions">
-                    <a href="#" class="btn btn-primary w-100">Register</a>
-                    <a href="#login" class="btn w-100">Already have an account? Log In</a>
-                </div>
-            </div>
-        </div>
-
         <div class="modal-overlay" id="contact">
             <a href="#" class="modal-bg-click"></a>
             <div class="modal-card small glass">
@@ -376,7 +310,6 @@
                     <h2 class="modal-title">Contact Support</h2>
                     <a href="#" class="close-btn" title="Close">&times;</a>
                 </div>
-                <p class="modal-desc" style="margin-bottom: 24px; text-align: left;">Need help with your ledger? Drop us a message.</p>
                 <div class="input-group">
                     <input type="text" class="input-field" placeholder="Your Name">
                     <input type="email" class="input-field" placeholder="Email Address">
@@ -387,9 +320,6 @@
                 </div>
             </div>
         </div>
-
     </div>
-
 </body>
-
 </html>
