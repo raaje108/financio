@@ -242,11 +242,12 @@
         .stat-green { color: var(--green); }
 
         /* Ledger Table */
+        /* Ledger Table */
         .ledger-table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
-            background: rgba(255, 255, 255, 0.4);
+            background: var(--white); /* Changed from semi-transparent to solid white */
             border-radius: 12px;
             overflow: hidden;
         }
@@ -256,18 +257,24 @@
             padding: 16px;
             text-align: left;
             border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            vertical-align: middle;
         }
 
         .ledger-table th {
             font-weight: 600;
             color: var(--text-muted);
-            font-size: 14px;
-            background: rgba(255, 255, 255, 0.6);
+            font-size: 13px; /* Slightly smaller header text */
+            background: #f8fafc; /* Solid light gray background to match image */
+            white-space: nowrap;
         }
 
         .ledger-table td {
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 500;
+        }
+
+        .ledger-table tbody tr:last-child td {
+            border-bottom: none; /* Removes the bottom border from the last row */
         }
 
         /* Progress Bar */
