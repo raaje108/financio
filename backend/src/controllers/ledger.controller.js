@@ -1,4 +1,4 @@
-const db = require('../config/db');
+const db = require('../db/index');
 
 // Get inventory/ledger for a specific shop
 exports.getShopLedger = async (req, res) => {

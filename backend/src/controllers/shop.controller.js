@@ -1,4 +1,4 @@
-const db = require('../config/db');
+const db = require('../db/index');
 
 // Get all shops for a specific user (assuming user ID 1 for now)
 exports.getShops = async (req, res) => {
