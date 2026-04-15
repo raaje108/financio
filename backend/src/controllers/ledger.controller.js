@@ -1,6 +1,5 @@
-const db = require('../db/index');
+const db = require('../db/index'); 
 
-// Get inventory/ledger for a specific shop
 exports.getShopLedger = async (req, res) => {
     try {
         const { shopId } = req.params;
@@ -12,7 +11,6 @@ exports.getShopLedger = async (req, res) => {
     }
 };
 
-// Record a new transaction/inventory entry
 exports.recordTransaction = async (req, res) => {
     try {
         const { shopId } = req.params;

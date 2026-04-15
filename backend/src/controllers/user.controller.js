@@ -92,5 +92,3 @@ const getUserProfile = async (req, res) => {
 // Don't forget to export the new function
 module.exports = { registerUser, loginUser, getUserProfile };
 
-module.exports = { registerUser, loginUser };
-

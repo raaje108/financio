@@ -3,21 +3,21 @@ const cors = require('cors');
 
 const app = express();
 
+// Upgraded CORS to allow all origins for development
 app.use(cors({
-    origin: 'http://127.0.0.1:5500', // <-- Explicitly match your frontend URL
+    origin: true, // Allow all origins
     credentials: true
 }));
 
 app.use(express.json());
 
-// 1. Your existing User routes
+// Load Routers
 const userRouter = require('./routes/user.routes');
+const shopRouter = require('./routes/shop.routes');     
+const ledgerRouter = require('./routes/ledger.routes'); 
+
+// Mount Routers
 app.use('/api/v1/users', userRouter); 
-
-// 2. Add your new Shop and Ledger routes here!
-const shopRouter = require('./routes/shop.routes');     // Adjust path if needed
-const ledgerRouter = require('./routes/ledger.routes'); // Adjust path if needed
-
 app.use('/api/shops', shopRouter);
 app.use('/api/ledger', ledgerRouter);
 

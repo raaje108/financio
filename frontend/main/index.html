@@ -146,6 +146,16 @@
                 </div>
                 <div class="input-group">
                     <input type="text" id="new-shop-name" class="input-field" placeholder="Shop / Business Name">
+                    
+                    <select id="new-shop-category" class="input-field" style="appearance: none; cursor: pointer;">
+                        <option value="" disabled selected>Select Shop Category</option>
+                        <option value="grocery">Grocery & Kirana</option>
+                        <option value="electronics">Electronics & Appliances</option>
+                        <option value="hardware">Hardware & Construction</option>
+                        <option value="clothing">Clothing & Textiles</option>
+                        <option value="general">General / Other</option>
+                    </select>
+
                     <input type="text" id="new-shop-owner" class="input-field" placeholder="Owner Name">
                     <input type="tel" id="new-shop-phone" class="input-field" placeholder="Phone Number">
                     <textarea id="new-shop-address" class="input-field" placeholder="Full Business Address"></textarea>
@@ -198,7 +208,6 @@
                     <input type="number" id="total-amount" class="input-field" placeholder="Total Amount (&#8377;)" readonly style="background: #e2e8f0; font-weight: 700; color: var(--text-main); cursor: not-allowed;">
                     <input type="number" id="amount-paid" class="input-field" placeholder="Amount Actually Paid (₹)" style="border: 2px solid #10b981;">
 
-  
                     <select id="payment-method" class="input-field" style="appearance: none; cursor: pointer;">
                         <option value="" disabled selected>Select Payment Mode</option>
                         <option value="UPI">UPI / PhonePe / GPay</option>
@@ -218,26 +227,26 @@
         </div>
 
         <script>
-            // NEW: We store all shops globally so we can access their details later!
+            // We store all shops globally so we can access their details later!
             let globalShops = [];
             let activeShopId = null;
 
             function calculateTotal() {
-    const price = document.getElementById('item-price').value;
-    const qty = document.getElementById('item-qty').value;
-    const totalInput = document.getElementById('total-amount');
-    const paidInput = document.getElementById('amount-paid'); // Grab the new input
-    
-    if (price && qty) {
-        const total = (parseFloat(price) * parseFloat(qty)).toFixed(2);
-        totalInput.value = total;
-        // Auto-fill the paid amount for convenience, but the user can change it manually!
-        paidInput.value = total; 
-    } else {
-        totalInput.value = '';
-        paidInput.value = '';
-    }
-}
+                const price = document.getElementById('item-price').value;
+                const qty = document.getElementById('item-qty').value;
+                const totalInput = document.getElementById('total-amount');
+                const paidInput = document.getElementById('amount-paid'); // Grab the new input
+                
+                if (price && qty) {
+                    const total = (parseFloat(price) * parseFloat(qty)).toFixed(2);
+                    totalInput.value = total;
+                    // Auto-fill the paid amount for convenience, but the user can change it manually!
+                    paidInput.value = total; 
+                } else {
+                    totalInput.value = '';
+                    paidInput.value = '';
+                }
+            }
 
             async function submitNewShop(event) {
                 event.preventDefault();
@@ -246,7 +255,8 @@
                     shop_name: document.getElementById('new-shop-name').value,
                     shop_owner: document.getElementById('new-shop-owner').value,
                     phone_no: document.getElementById('new-shop-phone').value,
-                    shop_address: document.getElementById('new-shop-address').value
+                    shop_address: document.getElementById('new-shop-address').value,
+                    shop_category: document.getElementById('new-shop-category').value || 'general' // ADDED THIS
                 };
 
                 const token = localStorage.getItem('financioToken'); 
@@ -285,7 +295,8 @@
                 const container = document.getElementById('shops-container');
 
                 if (!token) {
-                    container.innerHTML = '<p style="color: red;">Please log in to view your shops.</p>';
+                    // Redirect to login page if no token
+                    window.location.href = '../login/index.html';
                     return;
                 }
 
@@ -306,35 +317,62 @@
                     }
 
                     shops.forEach(shop => {
+                        // 1. Determine the icon based on the shop's category
+                        let shopIconSVG = '';
+                        switch(shop.shop_category) {
+                            case 'grocery':
+                                shopIconSVG = `<svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>`;
+                                break;
+                            case 'electronics':
+                                shopIconSVG = `<svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-amber"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>`;
+                                break;
+                            case 'hardware':
+                                shopIconSVG = `<svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>`;
+                                break;
+                            case 'clothing':
+                                shopIconSVG = `<svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-pink"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>`;
+                                break;
+                            default: // 'general'
+                                shopIconSVG = `<svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #6366f1;"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>`;
+                        }
+
+                        // 2. Parse the math sent from the new backend query
+                        const totalAmount = parseFloat(shop.total_amount) || 0;
+                        const totalPaid = parseFloat(shop.total_paid) || 0;
+                        const totalRem = parseFloat(shop.total_remaining) || 0;
+                        
+                        // Calculate percentages for the mini progress bar
+                        const paidPercent = totalAmount === 0 ? 0 : Math.round((totalPaid / totalAmount) * 100);
+                        const remPercent = totalAmount === 0 ? 0 : (100 - paidPercent);
+
+                        // 3. Inject the dynamic numbers into the HTML
                         container.innerHTML += `
                             <a href="#ledger" class="shop-card glass" onclick="setActiveShop(${shop.shop_id})">
                                 <div class="shop-title">
-                                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald">
-                                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path>
-                                    </svg>
+                                    ${shopIconSVG}
                                     ${shop.shop_name}
                                 </div>
                                 <div class="shop-address">${shop.shop_address || 'No address provided'}</div>
                                 <div class="mt-auto">
                                     <div class="progress-container">
-                                        <div class="progress-bar" style="width: 0%;"></div>
+                                        <div class="progress-bar" id="card-prog-${shop.shop_id}" style="width: ${paidPercent}%;"></div>
                                     </div>
                                     <div class="progress-text">
-                                        <span class="stat-green">Paid 0%</span>
-                                        <span class="stat-red">pending 0%</span>
+                                        <span class="stat-green">${paidPercent}% Paid</span>
+                                        <span class="stat-red">${remPercent}% Remaining</span>
                                     </div>
                                     <div class="shop-stats">
                                         <div class="stat-item">
                                             <span class="stat-label">Total Amount</span>
-                                            <span class="stat-value">&#8377;0</span>
+                                            <span class="stat-value">&#8377;${totalAmount.toFixed(2)}</span>
                                         </div>
                                         <div class="stat-item">
                                             <span class="stat-label">Amount Paid</span>
-                                            <span class="stat-value stat-green">&#8377;0</span>
+                                            <span class="stat-value stat-green">&#8377;${totalPaid.toFixed(2)}</span>
                                         </div>
                                         <div class="stat-item">
                                             <span class="stat-label">Remaining</span>
-                                            <span class="stat-value stat-red">&#8377;0</span>
+                                            <span class="stat-value stat-red">&#8377;${totalRem.toFixed(2)}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -424,6 +462,10 @@
                     document.getElementById('ledger-progress-bar').style.width = `${paidPercent}%`;
                     document.getElementById('ledger-stat-paid').innerHTML = `${paidPercent}% Paid (&#8377;${totalPaidSum.toFixed(2)})`;
                     document.getElementById('ledger-stat-rem').innerHTML = `${remPercent}% Remaining (&#8377;${totalRemaining.toFixed(2)})`;
+                    
+                    // Update mini card progress bar too
+                    const cardProg = document.getElementById(`card-prog-${shopId}`);
+                    if(cardProg) cardProg.style.width = `${paidPercent}%`;
 
                 } catch (error) {
                     console.error(error);
@@ -432,68 +474,68 @@
             }
 
             // Submit a New Transaction
-            // Submit a New Transaction
-async function submitTransaction(event) {
-    event.preventDefault();
+            async function submitTransaction(event) {
+                event.preventDefault();
 
-    if (!activeShopId) {
-        alert("Please select a shop first.");
-        return;
-    }
+                if (!activeShopId) {
+                    alert("Please select a shop first.");
+                    return;
+                }
 
-    const token = localStorage.getItem('financioToken');
-    
-    const type = document.getElementById('trans-type').value;
-    const manualPaidInput = document.getElementById('amount-paid').value;
+                const token = localStorage.getItem('financioToken');
+                
+                const type = document.getElementById('trans-type').value;
+                const manualPaidInput = document.getElementById('amount-paid').value;
 
-    // Get the exact number the user typed in the box
-    let amountPaid = manualPaidInput ? parseFloat(manualPaidInput) : 0;
+                // Get the exact number the user typed in the box
+                let amountPaid = manualPaidInput ? parseFloat(manualPaidInput) : 0;
 
-    // If it's a refund, we send it as a negative number
-    if (type === 'REFUND_ISSUED') {
-        amountPaid = -Math.abs(amountPaid); 
-    }
+                // If it's a refund, we send it as a negative number
+                if (type === 'REFUND_ISSUED') {
+                    amountPaid = -Math.abs(amountPaid); 
+                }
 
-    const transactionData = {
-        product_name: document.getElementById('product-name').value,
-        quantity: document.getElementById('item-qty').value,
-        price: document.getElementById('item-price').value,
-        amount_paid: amountPaid,
-        payment_method: document.getElementById('payment-method').value,
-        notes: document.getElementById('trans-notes').value
-    };
+                const transactionData = {
+                    product_name: document.getElementById('product-name').value,
+                    quantity: document.getElementById('item-qty').value,
+                    price: document.getElementById('item-price').value,
+                    amount_paid: amountPaid,
+                    payment_method: document.getElementById('payment-method').value,
+                    notes: document.getElementById('trans-notes').value
+                };
 
-    try {
-        const response = await fetch(`http://localhost:8000/api/ledger/${activeShopId}`, {
-            method: 'POST',
-            headers: { 
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
-            },
-            body: JSON.stringify(transactionData)
-        });
+                try {
+                    const response = await fetch(`http://localhost:8000/api/ledger/${activeShopId}`, {
+                        method: 'POST',
+                        headers: { 
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${token}`
+                        },
+                        body: JSON.stringify(transactionData)
+                    });
 
-        if (response.ok) {
-            alert('Transaction saved!');
-            window.location.hash = '#ledger'; 
-            setActiveShop(activeShopId); // Refresh the table and the progress bar!
+                    if (response.ok) {
+                        alert('Transaction saved!');
+                        window.location.hash = '#ledger'; 
+                        setActiveShop(activeShopId); // Refresh the table and the progress bar!
+                        
+                        // Clear the form fields after successful submission
+                        document.getElementById('product-name').value = '';
+                        document.getElementById('item-qty').value = '';
+                        document.getElementById('item-price').value = '';
+                        document.getElementById('total-amount').value = '';
+                        document.getElementById('amount-paid').value = '';
+                        document.getElementById('trans-notes').value = '';
+                    } else {
+                        const error = await response.json();
+                        alert('Error: ' + error.message);
+                    }
+                } catch (error) {
+                    console.error(error);
+                    alert('Server error saving transaction.');
+                }
+            }
             
-            // Clear the form fields after successful submission
-            document.getElementById('product-name').value = '';
-            document.getElementById('item-qty').value = '';
-            document.getElementById('item-price').value = '';
-            document.getElementById('total-amount').value = '';
-            document.getElementById('amount-paid').value = '';
-            document.getElementById('trans-notes').value = '';
-        } else {
-            const error = await response.json();
-            alert('Error: ' + error.message);
-        }
-    } catch (error) {
-        console.error(error);
-        alert('Server error saving transaction.');
-    }
-}
             // Trigger the shop load when the page finishes loading
             document.addEventListener('DOMContentLoaded', loadShops);
         </script>
