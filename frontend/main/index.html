@@ -14,8 +14,7 @@
 
 <body>
     <aside class="sidebar">
-        <h2 class="sidebar-brand">USERNAME</h2>
-        <div class="sidebar-menu">
+            <h2 class="sidebar-brand" id="user-display-name">USERNAME</h2>        <div class="sidebar-menu">
             <a href="#" class="sidebar-item active">
                 <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <rect x="3" y="3" width="7" height="7"></rect>
@@ -46,10 +45,10 @@
             <div class="logo"><h1>FINANCIO</h1></div>
             <div class="nav-menu">
                 <a href="#" class="nav-item active">Home</a>
-                <a href="#shops" class="nav-item">Shops</a>
+                <a href="../about/index.html" class="nav-item">About Us</a>
                 <a href="#add-shop" class="nav-item">Add Shop</a>
                 <a href="../profile/" class="nav-item">Profile</a>
-                <a href="#contact" class="nav-item">Contact</a>
+                <a href="../contact/index.html" class="nav-item">Contact Us</a>
             </div>
         </nav>
 
@@ -536,8 +535,55 @@
                 }
             }
             
+
+
+
+            function displayUserName() {
+    const nameElement = document.getElementById('user-display-name');
+    
+    // Grab the 'financioUser' object that your login page actually saves
+    const savedUserStr = localStorage.getItem('financioUser');
+    
+    if (savedUserStr) {
+        try {
+            // Since it was saved as a JSON string, parse it back into an object
+            const savedUser = JSON.parse(savedUserStr);
+            
+            // Check if full_name exists inside that object (based on your signup form)
+            if (savedUser.full_name) {
+                nameElement.textContent = savedUser.full_name.toUpperCase();
+                return; // Success! Exit the function.
+            }
+        } catch (error) {
+            console.error("Could not parse user data from localStorage", error);
+        }
+    }
+
+    // Fallback: Token parsing (just in case)
+    const token = localStorage.getItem('financioToken');
+    if (token) {
+        try {
+            const payload = JSON.parse(atob(token.split('.')[1]));
+            // It might be at payload.full_name or nested inside payload.user.full_name
+            const name = payload.full_name || (payload.user && payload.user.full_name);
+            
+            if (name) {
+                nameElement.textContent = name.toUpperCase();
+            }
+        } catch (error) {
+            console.error("Could not parse token for username", error);
+        }
+    }
+}
             // Trigger the shop load when the page finishes loading
-            document.addEventListener('DOMContentLoaded', loadShops);
+            // Change this existing line:
+// document.addEventListener('DOMContentLoaded', loadShops);
+
+// To this:
+document.addEventListener('DOMContentLoaded', () => {
+    displayUserName();
+    loadShops();
+});
         </script>
     </div>
 </body>
