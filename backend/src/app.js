@@ -3,7 +3,6 @@ const cors = require('cors');
 
 const app = express();
 
-// Upgraded CORS to allow all origins for development
 app.use(cors({
     origin: true, // Allow all origins
     credentials: true
